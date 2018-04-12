@@ -16,6 +16,7 @@ int main(int argc, char* argv[])
 
   for (int i = 1; i< argc; i=i+2 ){
     if(argc % 2 == 0){
+      cout << "Usage: ./gpa course letterGrade" << endl;
       return 0;
     }
     else{
