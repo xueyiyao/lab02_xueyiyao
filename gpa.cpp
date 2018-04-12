@@ -15,9 +15,15 @@ int main(int argc, char* argv[])
   int numCourses = int(argc/2);
 
   for (int i = 1; i< argc; i=i+2 ){
-    courseNames[i/2] = string(argv[i]);
-    courseLetterGrades[i/2] = string(argv[i+1]);
-    cout<<courseNames[i/2] << "   "<<courseLetterGrades[i/2]<<endl;
+    if(argc % 2 == 0){
+      cout << "Usage: ./gpa course letterGrade" << endl;
+      return 0;
+    }
+    else{
+      courseNames[i/2] = string(argv[i]);
+      courseLetterGrades[i/2] = string(argv[i+1]);
+      cout<<courseNames[i/2] << "   "<<courseLetterGrades[i/2]<<endl;
+    }
   }
 
   assignCourseGrade(numCourses, courseLetterGrades, courseGrades );
